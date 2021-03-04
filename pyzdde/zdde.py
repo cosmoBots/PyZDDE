@@ -11353,7 +11353,7 @@ class PyZDDE(object):
             if _global_use_installed_imageMagick:
                 cd = _global_imageMagick_dir
             else:
-                cd = _os.path.dirname(_os.path.realpath(__file__))
+                cd = _os.path.dirname(self.zGetFile())
             if MFFtNum==0:
                 imagickCmd = ('{cd}\convert.exe \"{MetaImg}\" -flatten '
                               '-resize {per}% -gamma {ga} \"{PngImg}\"'
@@ -11651,7 +11651,7 @@ class PyZDDE(object):
         ----
         Only works in sequential/hybrid mode. Can't retrieve NSC objects.
         """
-        cd = _os.path.dirname(_os.path.realpath(__file__))
+        cd = _os.path.dirname(self.zGetFile())
         textFileName = cd +"\\"+"prescriptionFile.txt"
         ret = self.zGetTextFile(textFileName,'Pre', "None", 0)
         assert ret == 0
