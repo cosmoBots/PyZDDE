@@ -10342,7 +10342,7 @@ class PyZDDE(object):
 
         # Since the object space cardinal points are reported w.r.t. the
         # surface 1, ensure that surface 1 is global reference surface
-        if sysProp.globalRefSurf is not 1:
+        if sysProp.globalRefSurf != 1:
             self.zSetSystem(unitCode=sysProp.unitCode, stopSurf=sysProp.stopSurf,
                             rayAimingType=sysProp.rayAimingType, temp=sysProp.temp,
                             pressure=sysProp.pressure, globalRefSurf=1)
@@ -10380,7 +10380,7 @@ class PyZDDE(object):
             hiatus = abs(ima_z + principalPlane_imgSpace - principalPlane_objSpace)
 
         # Restore the Global ref surface if it was changed
-        if sysProp.globalRefSurf is not 1:
+        if sysProp.globalRefSurf != 1:
             self.zSetSystem(unitCode=sysProp.unitCode, stopSurf=sysProp.stopSurf,
                             rayAimingType=sysProp.rayAimingType, temp=sysProp.temp,
                             pressure=sysProp.pressure,
